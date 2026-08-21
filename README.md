@@ -1,2 +1,2 @@
-Ezcraft-ID.github.io
+ezcraftid.github.io
 
