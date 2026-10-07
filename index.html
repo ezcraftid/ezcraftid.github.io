@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>DENI.ARP - jaringan, iot, pemrograman</title>
+<meta name="description" content="Portofolio Deni April Rian Pratama, mahasiswa Informatika di Yogyakarta, lulusan SMK Teknik Jaringan Komputer dan Telekomunikasi. Jaringan, IoT, dan pemrograman.">
+<link rel="canonical" href="https://deni26.my.id/">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="id_ID">
+<meta property="og:site_name" content="deni26.my.id">
+<meta property="og:url" content="https://deni26.my.id/">
+<meta property="og:title" content="Deni April Rian Pratama - jaringan, iot, pemrograman">
+<meta property="og:description" content="Portofolio Deni April Rian Pratama, mahasiswa Informatika di Yogyakarta, lulusan SMK Teknik Jaringan Komputer dan Telekomunikasi. Jaringan, IoT, dan pemrograman.">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Deni April Rian Pratama - jaringan, iot, pemrograman">
+<meta name="twitter:description" content="Portofolio Deni April Rian Pratama, mahasiswa Informatika di Yogyakarta, lulusan SMK Teknik Jaringan Komputer dan Telekomunikasi. Jaringan, IoT, dan pemrograman.">
+
+<meta name="theme-color" content="#E6E9E6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0E1214" media="(prefers-color-scheme: dark)">
+
+<link rel="icon" href="assets/img/favicon.ico" sizes="any">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="preload" as="image" href="assets/img/mascot/hu-tao-spinning.gif">
+
+<script>
+  /* dipasang sebelum render supaya halaman tidak berkedip saat ganti tema */
+  (function () {
+    try {
+      var saved = localStorage.getItem('theme');
+      var dark = saved ? saved === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.classList.toggle('dark', dark);
+    } catch (e) {}
+  })();
+</script>
+</head>
+
+<body>
+
+<a class="skip" href="#isi">Lewati ke konten</a>
+
+<!-- ==================================================================
+     LAYAR HIDUP
+     Gambar pemuat (assets/img/mascot/hu-tao-spinning.gif) jadi tampilan utama. Kalau
+     gagal dimuat, atau kalau pengguna minta gerak dikurangi, LED
+     susunan yang menyala berurutan menggantikannya.
+     ================================================================== -->
+<div class="boot" id="boot" aria-hidden="true">
+  <div class="boot-inner">
+    <img class="boot-video" src="assets/img/mascot/hu-tao-spinning.gif" alt="" width="80" height="80" decoding="async">
+
+    <div class="boot-leds">
+      <span style="--i:0"></span><span style="--i:1"></span><span style="--i:2"></span>
+      <span style="--i:3"></span><span style="--i:4"></span><span style="--i:5"></span>
+      <span style="--i:6"></span><span style="--i:7"></span><span style="--i:8"></span>
+      <span style="--i:9"></span><span style="--i:10"></span><span style="--i:11"></span>
+    </div>
+  </div>
+</div>
+
+<header class="topbar">
+  <nav class="nav" aria-label="Navigasi utama">
+    <a class="mark" href="#hero">DENI.ARP</a>
+
+    <ul class="nav-list" id="navList">
+      <li><a href="#proyek">Proyek</a></li>
+      <li><a href="#keahlian">Keahlian</a></li>
+      <li><a href="#tentang">Tentang</a></li>
+      <li><a href="#kontak">Kontak</a></li>
+    </ul>
+
+    <div class="tools">
+      <button class="tool" id="themeBtn" type="button" aria-label="Ganti ke mode gelap">
+        <svg class="tool-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/></svg>
+        <svg class="tool-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.6M12 19.4V22M2 12h2.6M19.4 12H22M4.9 4.9l1.9 1.9M17.2 17.2l1.9 1.9M19.1 4.9l-1.9 1.9M6.8 17.2l-1.9 1.9"/></svg>
+      </button>
+
+      <button class="tool" id="audioBtn" type="button" aria-label="Putar musik latar" aria-pressed="false">
+        <span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      </button>
+
+      <button class="tool tool-menu" id="menuBtn" type="button" aria-label="Buka menu" aria-expanded="false" aria-controls="navList">Menu</button>
+    </div>
+  </nav>
+</header>
+
+<main id="isi">
+
+  <!-- ==================================================================
+       PANEL 1U
+       The jack rows are built by JS from .entries in the "Proyek"
+       section below. Port 01 is this site, then one port per project,
+       then free ports up to a whole row of twelve. Nothing to edit
+       here when a project is added. See PORT in assets/js/script.js.
+       ================================================================== -->
+  <section class="hero" id="hero" data-spine="0">
+    <div class="panel">
+      <p class="panel-legend">
+        <span>1U faceplate</span>
+        <span>deni26.my.id</span>
+      </p>
+
+      <div class="panel-grid">
+        <div class="panel-id">
+          <img class="asset-tag" src="assets/img/potrait.webp" alt="Deni April Rian Pratama" width="96" height="96" decoding="async">
+          <h1 class="name">Deni April<br>Rian Pratama</h1>
+          <p class="role">Mahasiswa Informatika, lulusan SMK Teknik Jaringan Komputer &amp; Telekomunikasi</p>
+        </div>
+
+        <div class="panel-ports">
+          <div id="jacks"></div>
+          <p class="panel-foot" id="panelFoot"></p>
+        </div>
+      </div>
+    </div>
+
+    <p class="lede">
+      Saya belajar jaringan di SMK, lalu mempraktikkannya sendiri: crimping kabel, memasang LAN di laboratorium, dan mengendalikan perangkat kecil lewat internet. Sekarang saya melanjutkan ke Informatika.
+    </p>
+
+    <div class="actions">
+      <a class="btn" href="#proyek">Lihat proyek</a>
+      <a class="btn-quiet" href="mailto:mailme@deni26.my.id">mailme@deni26.my.id</a>
+      <!-- Tambahkan tautan lain di sini, misalnya GitHub, kalau sudah ada. -->
+    </div>
+  </section>
+
+
+  <!-- ==================================================================
+       PROYEK
+       To add a project: copy one <article class="entry">, change the
+       text inside, set data-state. No CSS or JS edit needed.
+
+       data-state takes one of these values:
+         active  = project being worked on right now
+         done    = finished
+         offline = no longer worked on
+
+       To show a "Buka proyek" button: put the project's web address in the
+       href of its <a class="entry-open">, then add data-web="on" to the
+       <article>. Remove the attribute (or set "off") to hide the button
+       and show "Tautan belum tersedia" again.
+
+       To show a GitHub link beside the button: put the repository address in
+       the href of <a class="entry-gh">, then add data-github="on" to the
+       <article>. The two toggles (data-web, data-github) work independently.
+       ================================================================== -->
+  <section class="band" id="proyek" data-spine="1">
+    <p class="rail">proyek</p>
+    <div class="col">
+      <h2 class="band-title">Proyek</h2>
+
+      <div class="entries">
+
+        <article class="entry" data-state="active" data-web="on">
+          <p class="entry-port"><span class="led" aria-hidden="true"></span><span class="entry-num"></span></p>
+          <div class="entry-body">
+            <div class="entry-head">
+              <h3 class="entry-title">Arisa Melody</h3>
+            </div>
+            <p class="entry-desc">Bot musik Discord yang berjalan di server sendiri, lengkap dengan situs statistik.</p>
+            <p class="entry-spec">Node.js, Lavalink, MongoDB</p>
+          </div>
+          <div class="entry-links">
+            <p class="entry-note">Tautan belum tersedia</p>
+            <a class="entry-open" href="https://deni26.my.id/project/ArisaMelody" target="_blank" rel="noopener noreferrer" aria-label="Buka situs Arisa Melody (tab baru)">Lihat proyek</a>
+            <!-- TODO: isi href dengan alamat web proyek, lalu set data-web="on" di <article> -->
+            <!-- TODO: Deni cek apakah status dan deskripsi benar -->
+            <a class="entry-gh" href="#" target="_blank" rel="noopener noreferrer" aria-label="Buka repositori GitHub Arisa Melody (tab baru)">GitHub</a>
+            <!-- TODO: isi href dengan alamat repositori, lalu set data-github="on" di <article> -->
+          </div>
+        </article>
+
+        <article class="entry" data-state="active">
+          <p class="entry-port"><span class="led" aria-hidden="true"></span><span class="entry-num"></span></p>
+          <div class="entry-body">
+            <div class="entry-head">
+              <h3 class="entry-title">Server rumahan</h3>
+            </div>
+            <p class="entry-desc">Server dari perangkat bekas yang dipakai untuk menjalankan layanan sendiri di kamar kos.</p>
+            <p class="entry-spec">perangkat bekas, server rumahan</p>
+          </div>
+          <div class="entry-links">
+            <p class="entry-note">Tautan belum tersedia</p>
+            <a class="entry-open" href="#" target="_blank" rel="noopener noreferrer" aria-label="Buka situs Server rumahan (tab baru)">Lihat proyek</a>
+            <!-- TODO: isi href dengan alamat web proyek, lalu set data-web="on" di <article> -->
+            <a class="entry-gh" href="#" target="_blank" rel="noopener noreferrer" aria-label="Buka repositori GitHub Server rumahan (tab baru)">GitHub</a>
+            <!-- TODO: isi href dengan alamat repositori, lalu set data-github="on" di <article> -->
+          </div>
+          <!-- TODO: Deni isi sistem operasi dan layanan yang dijalankan -->
+        </article>
+
+        <article class="entry" data-state="done">
+          <p class="entry-port"><span class="led" aria-hidden="true"></span><span class="entry-num"></span></p>
+          <div class="entry-body">
+            <div class="entry-head">
+              <h3 class="entry-title">Kipas ventilasi pintar</h3>
+            </div>
+            <p class="entry-desc">Kipas yang menyala dan mengatur kecepatannya sendiri mengikuti suhu dan kelembapan ruangan.</p>
+            <p class="entry-spec">ESP32, DHT22, kipas PWM</p>
+          </div>
+          <div class="entry-links">
+            <p class="entry-note">Tautan belum tersedia</p>
+            <a class="entry-open" href="#" target="_blank" rel="noopener noreferrer" aria-label="Buka situs Kipas ventilasi pintar (tab baru)">Lihat proyek</a>
+            <!-- TODO: isi href dengan alamat web proyek, lalu set data-web="on" di <article> -->
+            <a class="entry-gh" href="#" target="_blank" rel="noopener noreferrer" aria-label="Buka repositori GitHub Kipas ventilasi pintar (tab baru)">GitHub</a>
+            <!-- TODO: isi href dengan alamat repositori, lalu set data-github="on" di <article> -->
+          </div>
+        </article>
+
+        <article class="entry" data-state="done">
+          <p class="entry-port"><span class="led" aria-hidden="true"></span><span class="entry-num"></span></p>
+          <div class="entry-body">
+            <div class="entry-head">
+              <h3 class="entry-title">Penyiram tanaman otomatis</h3>
+            </div>
+            <p class="entry-desc">Prototipe penyiram tanaman yang menyiram sendiri saat tanah kering, dan bisa disiram manual dari halaman web.</p>
+            <p class="entry-spec">ESP8266, IoT, kontrol lewat web</p>
+          </div>
+          <div class="entry-links">
+            <p class="entry-note">Tautan belum tersedia</p>
+            <a class="entry-open" href="#" target="_blank" rel="noopener noreferrer" aria-label="Buka situs Penyiram tanaman otomatis (tab baru)">Lihat proyek</a>
+            <!-- TODO: isi href dengan alamat web proyek, lalu set data-web="on" di <article> -->
+            <a class="entry-gh" href="#" target="_blank" rel="noopener noreferrer" aria-label="Buka repositori GitHub Penyiram tanaman otomatis (tab baru)">GitHub</a>
+            <!-- TODO: isi href dengan alamat repositori, lalu set data-github="on" di <article> -->
+          </div>
+        </article>
+
+        <article class="entry" data-state="done">
+          <p class="entry-port"><span class="led" aria-hidden="true"></span><span class="entry-num"></span></p>
+          <div class="entry-body">
+            <div class="entry-head">
+              <h3 class="entry-title">Jaringan LAN laboratorium</h3>
+            </div>
+            <p class="entry-desc">Pemasangan jaringan kabel di laboratorium komputer sekolah, dari pengkabelan sampai konfigurasi perangkat jaringan.</p>
+            <p class="entry-spec">LAN, RouterBOARD, pengkabelan</p>
+          </div>
+          <div class="entry-links">
+            <p class="entry-note">Tautan belum tersedia</p>
+            <a class="entry-open" href="#" target="_blank" rel="noopener noreferrer" aria-label="Buka situs Jaringan LAN laboratorium (tab baru)">Lihat proyek</a>
+            <!-- TODO: isi href dengan alamat web proyek, lalu set data-web="on" di <article> -->
+            <a class="entry-gh" href="#" target="_blank" rel="noopener noreferrer" aria-label="Buka repositori GitHub Jaringan LAN laboratorium (tab baru)">GitHub</a>
+            <!-- TODO: isi href dengan alamat repositori, lalu set data-github="on" di <article> -->
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================================================================
+       KEAHLIAN
+       Jadwal komponen: apa yang bisa, lalu untuk apa.
+       Menambah : salin satu <tr>, ganti isi kedua kolomnya.
+       ================================================================== -->
+  <section class="band" id="keahlian" data-spine="2">
+    <p class="rail">keahlian</p>
+    <div class="col">
+      <h2 class="band-title">Yang bisa saya kerjakan</h2>
+
+      <table class="schedule">
+        <thead>
+          <tr><th scope="col">Kemampuan</th><th scope="col">Dipakai untuk</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Networking</th><td>Membangun dan mengelola LAN, konfigurasi switch, router, dan MikroTik</td></tr>
+          <tr><th scope="row">Hardware</th><td>Crimping kabel, memasang konektor RJ45, dan merakit perangkat di meja kerja</td></tr>
+          <tr><th scope="row">IoT</th><td>Sensor, relay, dan kipas yang dikendalikan ESP32 atau ESP8266, termasuk dari halaman web</td></tr>
+          <tr><th scope="row">Node.js</th><td>Membuat bot Discord dan layanan kecil yang berjalan di server sendiri</td></tr>
+          <tr><th scope="row">Linux</th><td>Mengelola server rumahan dari perangkat bekas</td></tr>
+          <tr><th scope="row">HTML</th><td>Kerangka halaman web yang bisa dibaca peramban dan mesin pencari</td></tr>
+          <tr><th scope="row">CSS</th><td>Tampilan halaman yang rapi di layar besar maupun HP</td></tr>
+          <tr><th scope="row">JavaScript</th><td>Interaksi di peramban: ganti tema, buka panel, ubah isi halaman</td></tr>
+          <tr><th scope="row">Canva</th><td>Poster, banner, dan materi visual untuk tugas sekolah</td></tr>
+          <tr><th scope="row">MS Office</th><td>Laporan, notulen, dan dokumentasi proyek</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+
+  <!-- ==================================================================
+       TENTANG
+       Rows of datablock:Jurusan, Kampus, Lokasi, Lulusan, Alamat, Email.
+       Semua sudah terisi. Kalau ada yang berubah, ubah di sini saja.
+       ================================================================== -->
+  <section class="band" id="tentang" data-spine="3">
+    <p class="rail">tentang</p>
+    <div class="col">
+      <h2 class="band-title">Siapa saya</h2>
+
+      <div class="split">
+        <div class="split-text">
+          <p>Saya Deni April Rian Pratama, mahasiswa Informatika di Universitas AMIKOM Yogyakarta. Sebelumnya saya sekolah di SMK jurusan Teknik Jaringan Komputer dan Telekomunikasi. Minat saya jaringan, perangkat keras, dan hal-hal yang bisa dibuat berjalan sendiri.</p>
+          <p>Portofolio ini saya susun dan perbarui sendiri. Kalau sedang mencari orang untuk pekerjaan jaringan atau IoT, kirim email saja, pasti saya balas.</p>
+        </div>
+
+        <dl class="datablock">
+          <div class="data-row"><dt>Jurusan</dt><dd>Informatika</dd></div>
+          <div class="data-row"><dt>Kampus</dt><dd>Universitas AMIKOM Yogyakarta</dd></div>
+          <div class="data-row"><dt>Lokasi</dt><dd>Yogyakarta</dd></div>
+          <div class="data-row"><dt>Sebelumnya</dt><dd>SMK Teknik Jaringan Komputer &amp; Telekomunikasi</dd></div>
+          <div class="data-row"><dt>Alamat</dt><dd>deni26.my.id</dd></div>
+          <div class="data-row"><dt>Email</dt><dd>mailme@deni26.my.id</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>&copy; 2026 Deni April Rian Pratama</p>
+  <p class="footer-dom">deni26.my.id</p>
+</footer>
+
+
+<!-- ==================================================================
+     DOK
+     Satu sudut untuk dua hal, bukan lima lingkaran mengambang.
+     Hu Tao untuk mengobrol, tombol kecil untuk membuka kontak.
+
+     Catatan untuk pembaca layar: bubbleText dipakai untuk kalimat
+     yang muncul sendiri dan sengaja tidak dibacakan. bubbleSay hanya
+     diisi kalau kalimatnya muncul karena kamu yang menekan sesuatu.
+     ================================================================== -->
+<div class="dock" id="kontak">
+
+  <div class="bubble" id="bubble" hidden>
+    <p class="bubble-name">Hu Tao</p>
+    <button class="bubble-close" id="bubbleClose" type="button" aria-label="Tutup pesan">&times;</button>
+    <p class="bubble-text" id="bubbleText"></p>
+    <p class="sr-only" id="bubbleSay" role="status" aria-live="polite"></p>
+  </div>
+
+  <div class="dock-panel" id="dockPanel" hidden>
+    <p class="dock-title">Kontak</p>
+    <div class="dock-rows">
+      <a class="dock-row" href="mailto:mailme@deni26.my.id"><span>Email</span><span class="mono">mailme@deni26.my.id</span></a>
+      <a class="dock-row" href="https://instagram.com/deniii.26_/" target="_blank" rel="noopener"><span>Instagram</span><span class="mono">@deniii.26_</span></a>
+      <a class="dock-row" href="https://facebook.com/deniaprilrian.p26/" target="_blank" rel="noopener"><span>Facebook</span><span class="mono">deniaprilrian.p26</span></a>
+      <a class="dock-row" href="https://tiktok.com/@deni.26_/" target="_blank" rel="noopener"><span>TikTok</span><span class="mono">@deni.26_</span></a>
+    </div>
+  </div>
+
+  <div class="dock-bar">
+    <button class="mascot" id="mascotBtn" type="button" aria-label="Ngobrol dengan Hu Tao">
+      <img class="mascot-img" id="mascotImg" src="assets/img/mascot/hu-tao-idle.gif" alt="" width="72" height="72" decoding="async" draggable="false">
+    </button>
+    <button class="dock-toggle" id="dockToggle" type="button" aria-expanded="false" aria-controls="dockPanel">kontak</button>
+  </div>
+</div>
+
+<audio id="bgAudio" loop preload="none">
+  <source src="assets/bgm/bgm.ogg" type="audio/ogg">
+</audio>
+
+<script src="assets/js/script.js"></script>
+</body>
+</html>
